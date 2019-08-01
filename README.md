@@ -29,6 +29,7 @@ function deepClone1(obj) {
 
 ```
 JSON.parse(JSON.stringify(obj))
+缺点: 拷贝对象包含正则表达式，或者函数，undefined等值，会返回空对象或者丢失
 ```
 
 ### 3. 通过jQuery的extend方法实现深拷贝
@@ -41,7 +42,7 @@ var newArray = $.extend(true,[],array);
 ### 4. Object.assign()拷贝
 
 ```
-当对象中只有一级属性，没有二级属性的时候，此方法为深拷贝，但是对象中有对象的时候，此方法，在二级属性以后就是浅拷贝
+缺点: 一级属性深拷贝，二级以后的属性浅拷贝
 ```
 
 ##### 更多：[https://www.cnblogs.com/echolun/p/7889848.html](https://www.cnblogs.com/echolun/p/7889848.html/)
